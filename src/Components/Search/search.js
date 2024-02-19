@@ -15,6 +15,7 @@ const Search = ({ onSearchChange }) => {
         geoOptions
       );
       const response_1 = await response.json();
+      console.log(response_1);
       return {
         options: response_1.data.map((city) => {
           return {
@@ -24,7 +25,8 @@ const Search = ({ onSearchChange }) => {
         }),
       };
     } catch (err) {
-      return console.log(err);
+      console.log(err);
+      return { options: [] };
     }
   };
 
